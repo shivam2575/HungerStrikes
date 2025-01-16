@@ -1,16 +1,22 @@
+import { IMAGE_API } from "../utils/constants";
+
 const RestaurantCard = (props) => {
   const { resData } = props;
-  const { image, name, cuisine, rating, cfo } = resData?.info;
-  const cusineList = cuisine.map((item) => item.name);
-
+  const { cloudinaryImageId, name, cuisines, avgRating, costForTwo, sla } =
+    resData?.info;
+  const { slaString } = sla;
   return (
     <div className="res-card">
-      <img className="res-logo" alt="res-logo" src={image.url} />
+      <img
+        className="res-logo"
+        alt="res-logo"
+        src={IMAGE_API + cloudinaryImageId}
+      />
       <h3>{name}</h3>
-      <h4>{cusineList.join(", ")}</h4>
-      <h5>{resData.order.deliveryTime} minutes</h5>
-      <h5>{rating.rating_text} stars</h5>
-      <h6>{cfo.text}</h6>
+      <h4>{cuisines.join(", ")}</h4>
+      <h5>{slaString}</h5>
+      <h5>{avgRating} stars</h5>
+      <h6>{costForTwo}</h6>
     </div>
   );
 };
