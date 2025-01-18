@@ -32,6 +32,14 @@
     padding: 10px;
 }
 
+.search button{
+    cursor: pointer;
+}
+
+.filter{
+    display: flex;
+}
+
 .res-card{
     padding: 5px;
     margin: 10px;
