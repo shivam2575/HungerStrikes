@@ -1,3 +1,6 @@
+import User from "./User";
+import UserClass from "./UserClass";
+
 const About = () => {
   return (
     <div>
@@ -13,6 +16,8 @@ const About = () => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </p>
+      {/* <User name={"Shivam"} location={"Daman, DNH & DD"} /> */}
+      <UserClass name={"Shivam"} location={"Daman, DNH & DD"} />
     </div>
   );
 };

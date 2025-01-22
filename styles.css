@@ -8,7 +8,18 @@
 .border{
     border: 1px solid black;
 }
-
+.pad-5{
+    padding: 5px;;
+}
+.pad-10{
+    padding: 10px;;
+}
+.mar-5{
+    margin: 5px;;
+}
+.mar-10{
+    margin: 10px;;
+}
 .border-rd{
     border-radius: 5px;
 }
