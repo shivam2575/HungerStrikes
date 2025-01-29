@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { SWIGGY_API } from "../utils/constants";
 import { Link } from "react-router";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   let [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -32,7 +33,14 @@ const Body = () => {
       console.log(error);
     }
   };
-
+  const onlineStatus = useOnlineStatus();
+  if (!onlineStatus)
+    return (
+      <h1>
+        Looks's like your internet is off!!! Please check your internet
+        connection.
+      </h1>
+    );
   return filteredList.length === 0 ? (
     <Shimmer />
   ) : (
