@@ -14,6 +14,10 @@ class About extends React.Component {
     }, 1000);
   }
 
+  componentDidUpdate() {
+    console.log("parent component did update");
+  }
+
   componentWillUnmount() {
     clearInterval(this.intervalId);
   }

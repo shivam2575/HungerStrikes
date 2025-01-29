@@ -11,6 +11,9 @@ class UserClass extends React.Component {
   componentDidMount() {
     console.log(this.props.name + "child component did mount");
   }
+  componentDidUpdate() {
+    console.log(this.props.name + "child component did update");
+  }
   render() {
     const { name, location } = this.props;
     const { userId } = this.state;
