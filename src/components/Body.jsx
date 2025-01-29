@@ -14,16 +14,23 @@ const Body = () => {
   }, []);
 
   const fetchRestaurantData = async () => {
-    const response = await fetch(SWIGGY_API);
-    const jsonData = await response.json();
-    setListOfRestaurant(
-      jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants
-    );
-    setFilteredList(
-      jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants
-    );
+    try {
+      const response = await fetch(SWIGGY_API);
+      if (!response.ok) {
+        throw new Error("Error while fetching all restaurant list");
+      }
+      const jsonData = await response.json();
+      setListOfRestaurant(
+        jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
+      setFilteredList(
+        jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return filteredList.length === 0 ? (

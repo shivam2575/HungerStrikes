@@ -4,20 +4,29 @@ class UserClass extends React.Component {
     super(props);
     this.state = {
       userId: 0,
+      userId2: 0,
     };
+    console.log(this.props.name + "child constructor");
+  }
+  componentDidMount() {
+    console.log(this.props.name + "child component did mount");
   }
   render() {
     const { name, location } = this.props;
     const { userId } = this.state;
+    const { userId2 } = this.state;
+    console.log(name + "child render");
     return (
       <div className="user-card border pad-5 mar-5">
         <h1>User Info - Class</h1>
         <h2>User id: {userId}</h2>
+        <h2>User id 2: {userId2}</h2>
         <button
           className="mar-5"
           onClick={() => {
             this.setState({
               userId: this.state.userId + 1,
+              userId2: this.state.userId2 + 1,
             });
           }}
         >
