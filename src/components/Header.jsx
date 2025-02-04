@@ -12,23 +12,25 @@ const Header = () => {
       </div>
       <div className="m-2 p-2">
         <ul className="flex p-2">
-          <li className="mx-4 px-2">
+          <li className="mx-4 p-1 hover:bg-gray-200 rounded-md cursor-pointer">
             Online status: {onlineStatus ? "🟢" : "🔴"}
           </li>
-          <li className="mx-4 px-2">
+          <li className="mx-4 p-1 hover:bg-gray-200 rounded-md">
             <Link to={"/"}>Home</Link>
           </li>
-          <li className="mx-4 px-2">
+          <li className="mx-4 p-1 hover:bg-gray-200 rounded-md">
             <Link to={"/about"}>About Us</Link>
           </li>
-          <li className="mx-4 px-2">
+          <li className="mx-4 p-1 hover:bg-gray-200 rounded-md">
             <Link to={"/contact"}>Contact Us</Link>
           </li>
-          <li className="mx-4 px-2">
+          <li className="mx-4 p-1 hover:bg-gray-200 rounded-md">
             <Link to={"/grocery"}>Grocery</Link>
           </li>
-          <li className="mx-4 px-2">Cart</li>
-          <li className="mx-4 px-2">
+          <li className="mx-4 p-1 hover:bg-gray-200 rounded-md cursor-pointer">
+            Cart
+          </li>
+          <li className="mx-4 p-2 bg-amber-500 rounded-md">
             <button
               className="login-btn"
               onClick={() => {
