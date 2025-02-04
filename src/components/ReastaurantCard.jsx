@@ -6,12 +6,8 @@ const RestaurantCard = (props) => {
     resData?.info;
   const { slaString } = sla;
   return (
-    <div className="res-card">
-      <img
-        className="res-logo border-rd"
-        alt="res-logo"
-        src={IMAGE_API + cloudinaryImageId}
-      />
+    <div className="w-8 h-8">
+      <img className="" alt="res-logo" src={IMAGE_API + cloudinaryImageId} />
       <h3>{name}</h3>
       <h4>{cuisines.join(", ")}</h4>
       <h5>{slaString}</h5>
