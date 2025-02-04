@@ -1,7 +1,6 @@
 import React from "react";
 import User from "./User";
 import UserClass from "./UserClass";
-import Demo from "./demo";
 
 class About extends React.Component {
   constructor(props) {
@@ -40,7 +39,6 @@ class About extends React.Component {
         {/* <User name={"Shivam"} location={"Daman, DNH & DD"} /> */}
         <UserClass name={"Shivam"} location={"Daman, DNH & DD"} />
         <UserClass name={"Mona"} location={"My Heart"} />
-        <Demo />
       </div>
     );
   }
