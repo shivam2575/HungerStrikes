@@ -44,10 +44,11 @@ const Body = () => {
   return filteredList.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="filter">
-        <div className="search">
+    <div className="m-2 p-2">
+      <div className="m-2 p-2 flex justify-evenly items-center">
+        <div className="m-2 p-2">
           <input
+            className="border p-1 rounded-lg"
             value={searchText}
             onChange={(e) => {
               console.log(searchText);
@@ -55,6 +56,7 @@ const Body = () => {
             }}
           ></input>
           <button
+            className="p-1 mx-2 bg-amber-500 hover:bg-amber-300 cursor-pointer rounded-lg"
             onClick={() => {
               console.log(
                 "inside onClick callback function with searchText:",
@@ -71,19 +73,36 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="top-rated-btn"
-          onClick={() => {
-            let filteredList = listOfRestaurant.filter(
-              (res) => res.info.avgRating > 4
-            );
-            setFilteredList(filteredList);
-          }}
-        >
-          Top rated restaurant
-        </button>
+        <div>
+          <button
+            className="border border-gray-300 cursor-pointer hover:bg-gray-200 rounded-2xl  p-2 mx-2"
+            onClick={() => {
+              let filteredList = listOfRestaurant.filter(
+                (res) => res.info.avgRating > 4.5
+              );
+              setFilteredList(filteredList);
+            }}
+          >
+            Top rated restaurant
+          </button>
+          <button className="border border-gray-300 cursor-pointer hover:bg-gray-200 rounded-2xl  p-2 mx-2">
+            Filter 2
+          </button>
+          <button className="border border-gray-300 cursor-pointer hover:bg-gray-200 rounded-2xl  p-2 mx-2">
+            Filter 3
+          </button>
+          <button className="border border-gray-300 cursor-pointer hover:bg-gray-200 rounded-2xl  p-2 mx-2">
+            Filter 4
+          </button>
+          <button className="border border-gray-300 cursor-pointer hover:bg-gray-200 rounded-2xl  p-2 mx-2">
+            Filter 5
+          </button>
+          <button className="border border-gray-300 cursor-pointer hover:bg-gray-200 rounded-2xl  p-2 mx-2">
+            Filter 6
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="m-2 p-2 flex flex-wrap justify-evenly">
         {filteredList.map((restaurant) => (
           <Link
             key={restaurant.info.id}
