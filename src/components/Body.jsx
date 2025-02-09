@@ -1,4 +1,4 @@
-import RestaurantCard from "./ReastaurantCard";
+import RestaurantCard, { RestaurantCardWithOffer } from "./ReastaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { SWIGGY_API } from "../utils/constants";
@@ -9,6 +9,7 @@ const Body = () => {
   let [listOfRestaurant, setListOfRestaurant] = useState([]);
   let [filteredList, setFilteredList] = useState([]);
   let [searchText, setSearchText] = useState("");
+  const OfferCard = RestaurantCardWithOffer(RestaurantCard);
 
   useEffect(() => {
     fetchRestaurantData();
@@ -33,7 +34,9 @@ const Body = () => {
       console.log(error);
     }
   };
+
   const onlineStatus = useOnlineStatus();
+
   if (!onlineStatus)
     return (
       <h1>
@@ -51,7 +54,6 @@ const Body = () => {
             className="border p-1 rounded-lg"
             value={searchText}
             onChange={(e) => {
-              console.log(searchText);
               setSearchText(e.target.value);
             }}
           ></input>
@@ -108,7 +110,11 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />{" "}
+            {restaurant.info?.isOpen ? (
+              <RestaurantCard resData={restaurant} />
+            ) : (
+              <OfferCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>

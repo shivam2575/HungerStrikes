@@ -6,7 +6,7 @@ const RestaurantCard = (props) => {
     resData?.info;
   const { slaString } = sla;
   return (
-    <div className="w-60 mx-2 p-1 hover:shadow-lg rounded-2xl hover:scale-90 transition-transform duration-300 cursor-pointer">
+    <div className="bg-white w-60 mx-2 p-1 hover:shadow-lg rounded-2xl hover:scale-90 transition-transform duration-300 cursor-pointer">
       <div>
         <img
           className="rounded-2xl w-58 h-48 m-1 p-1"
@@ -26,6 +26,19 @@ const RestaurantCard = (props) => {
       </div>
     </div>
   );
+};
+
+export const RestaurantCardWithOffer = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div className="bg-gray-300 rounded-2xl m-2 p-2">
+        <label className="bg-black text-white absolute rounded-lg m-1 p-1 z-40">
+          CLOSED NOW
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;

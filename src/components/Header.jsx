@@ -6,7 +6,7 @@ const Header = () => {
   const [btnName, setBtnName] = useState("Login");
   const onlineStatus = useOnlineStatus();
   return (
-    <div className="flex m-2 p-2 justify-between items-center shadow-lg rounded-md">
+    <div className="flex m-2 p-2 justify-between items-center shadow-lg rounded-md sticky top-0 bg-white z-50">
       <div className="w-25 h-25">
         <img className="hover:cursor-pointer object-contain" src={LOGO_URL} />
       </div>
