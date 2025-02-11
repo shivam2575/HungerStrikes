@@ -29,8 +29,8 @@ const RestauratMenu = () => {
     );
 
   return (
-    <div className="flex flex-col border w-6/12 mx-auto my-2 p-2 justify-center items-center">
-      <div className="rounded-2xl border m-2 p-2 bg-amber-500 shadow-2xl">
+    <div className="flex flex-col w-6/12 mx-auto my-2 p-2 justify-center items-center ">
+      <div className="rounded-2xl m-2 p-2 bg-amber-500 shadow-2xl">
         <div className="m-2 p-2 rounded-2xl bg-white">
           <h1 className="text-center font-bold text-2xl m-2">{name}</h1>
           <h3>
@@ -43,9 +43,9 @@ const RestauratMenu = () => {
         </div>
       </div>
       <div className="w-full m-2 p-2 text-center">🍽️ MENU 🍽️</div>
-      <div className="w-full m-2 p-2">
+      <div className="w-full m-2 p-2 bg-gray-100 rounded-2xl">
         {itemCatagory.map((item) => (
-          <ResMenuCatagory data={item.card.card} />
+          <ResMenuCatagory key={item.card.card.title} data={item.card.card} />
         ))}
       </div>
     </div>
