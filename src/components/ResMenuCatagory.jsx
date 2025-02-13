@@ -1,13 +1,12 @@
 import ResMenuItemList from "./ResMenuItemList";
-import { useState } from "react";
 
-const ResMenuCatagory = ({ data }) => {
+const ResMenuCatagory = ({ data, showItems, setShowIndex }) => {
   const { title, itemCards } = data;
-  const [showItems, setShowItems] = useState(false);
+
   return (
     <div className="w-full flex flex-col m-auto my-2 p-2 shadow-lg bg-white rounded-2xl">
       <div
-        onClick={() => setShowItems(!showItems)}
+        onClick={() => setShowIndex()}
         className="flex justify-between hover:bg-amber-400 p-2 cursor-pointer rounded-2xl"
       >
         <div className="font-bold">

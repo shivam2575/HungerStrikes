@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
-const Header = () => {
+import Usercontext from "../utils/Usercontext";
+
+const Header = ({}) => {
   const [btnName, setBtnName] = useState("Login");
+  const { username } = useContext(Usercontext);
+
   const onlineStatus = useOnlineStatus();
   return (
     <div className="flex m-2 p-2 justify-between items-center shadow-lg rounded-md sticky top-0 bg-white z-50">
@@ -28,7 +32,7 @@ const Header = () => {
             <Link to={"/grocery"}>Grocery</Link>
           </li>
           <li className="mx-4 p-2 hover:bg-gray-200 rounded-md cursor-pointer">
-            Cart
+            🛒
           </li>
           <li className="mx-4 p-2 bg-amber-500  hover:bg-amber-300 cursor-pointer rounded-md">
             <button
@@ -41,6 +45,9 @@ const Header = () => {
             >
               {btnName}
             </button>
+          </li>
+          <li className="mx-4 p-2 hover:bg-gray-200 rounded-md">
+            <span>{username}</span>
           </li>
         </ul>
       </div>

@@ -1,15 +1,18 @@
 import RestaurantCard, { RestaurantCardWithOffer } from "./ReastaurantCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { SWIGGY_API } from "../utils/constants";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import Usercontext from "../utils/Usercontext";
 
 const Body = () => {
   let [listOfRestaurant, setListOfRestaurant] = useState([]);
   let [filteredList, setFilteredList] = useState([]);
   let [searchText, setSearchText] = useState("");
   const OfferCard = RestaurantCardWithOffer(RestaurantCard);
+  const [userText, setUserText] = useState("");
+  const { username, setUserName } = useContext(Usercontext);
 
   useEffect(() => {
     fetchRestaurantData();
@@ -73,6 +76,21 @@ const Body = () => {
             }}
           >
             Search
+          </button>
+        </div>
+        <div className="m-2 p-2">
+          <input
+            className="border p-1 rounded-lg"
+            value={userText}
+            onChange={(e) => {
+              setUserText(e.target.value);
+            }}
+          ></input>
+          <button
+            onClick={() => setUserName(userText)}
+            className="p-1 mx-2 bg-amber-500 hover:bg-amber-300 cursor-pointer rounded-lg"
+          >
+            Set Username
           </button>
         </div>
         <div>

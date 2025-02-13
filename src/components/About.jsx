@@ -1,6 +1,7 @@
 import React from "react";
 import User from "./User";
 import UserClass from "./UserClass";
+import Usercontext from "../utils/Usercontext";
 
 class About extends React.Component {
   constructor(props) {
@@ -25,6 +26,11 @@ class About extends React.Component {
     return (
       <div>
         <h1>About Us</h1>
+        <Usercontext.Consumer>
+          {({ username }) => (
+            <UserClass name={username} location={"Daman, DNH & DD"} />
+          )}
+        </Usercontext.Consumer>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -37,7 +43,7 @@ class About extends React.Component {
           including versions of Lorem Ipsum.
         </p>
         {/* <User name={"Shivam"} location={"Daman, DNH & DD"} /> */}
-        <UserClass name={"Shivam"} location={"Daman, DNH & DD"} />
+
         <UserClass name={"Mona"} location={"My Heart"} />
       </div>
     );

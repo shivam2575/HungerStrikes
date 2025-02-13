@@ -10,7 +10,7 @@ const ResMenuItemList = ({ data }) => {
             <div className="m-1 flex justify-between">
               <span>{item.card.info.name}</span>
               <span>
-                {(item.card.info.price || item.card.info.defaultPrice) / 100}
+                ₹ {(item.card.info.price || item.card.info.defaultPrice) / 100}
               </span>
             </div>
             <div className="m-1 font-extralight text-xs">

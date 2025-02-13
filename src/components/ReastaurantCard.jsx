@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { IMAGE_API } from "../utils/constants";
+import Usercontext from "../utils/Usercontext";
 
 const RestaurantCard = (props) => {
+  const { username } = useContext(Usercontext);
   const { resData } = props;
   const { cloudinaryImageId, name, cuisines, avgRating, costForTwo, sla } =
     resData?.info;
@@ -22,7 +25,7 @@ const RestaurantCard = (props) => {
         <p className="p-1 font-light text-sm font-sans text-gray-600">
           {cuisines.join(", ")}
         </p>
-        <h5></h5>
+        <h5>{username}</h5>
       </div>
     </div>
   );
