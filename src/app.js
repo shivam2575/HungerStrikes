@@ -32,47 +32,50 @@ const AppLayout = () => {
   );
 };
 
-const appRoutes = createBrowserRouter([
-  {
-    path: "/HungerStrikes",
-    element: <AppLayout />,
-    children: [
-      {
-        index: true, // This makes it the default route inside "/HungerStrikes"
-        element: <Body />,
-      },
-      {
-        path: "about", // Remove leading `/`
-        element: (
-          <Suspense fallback={<Shimmer />}>
-            <About />
-          </Suspense>
-        ),
-      },
-      {
-        path: "contact",
-        element: <Contact />,
-      },
-      {
-        path: "grocery",
-        element: (
-          <Suspense fallback={<Shimmer />}>
-            <Grocery />
-          </Suspense>
-        ),
-      },
-      {
-        path: "restaurants/:resId",
-        element: <RestaurantMenu />,
-      },
-      {
-        path: "login",
-        element: <Login />,
-      },
-    ],
-    errorElement: <Error />,
-  },
-]);
+const appRoutes = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <AppLayout />,
+      children: [
+        {
+          index: true, // This makes it the default route for "/HungerStrikes/"
+          element: <Body />,
+        },
+        {
+          path: "about", // No leading "/"
+          element: (
+            <Suspense fallback={<Shimmer />}>
+              <About />
+            </Suspense>
+          ),
+        },
+        {
+          path: "contact",
+          element: <Contact />,
+        },
+        {
+          path: "grocery",
+          element: (
+            <Suspense fallback={<Shimmer />}>
+              <Grocery />
+            </Suspense>
+          ),
+        },
+        {
+          path: "restaurants/:resId",
+          element: <RestaurantMenu />,
+        },
+        {
+          path: "login",
+          element: <Login />,
+        },
+      ],
+      errorElement: <Error />,
+    },
+  ],
+  { basename: "/HungerStrikes" } // ✅ Set the base path here
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRoutes} />);
