@@ -1,0 +1,2 @@
+var e=("undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:"undefined"!=typeof global?global:{}).parcelRequire94c2;(0,e.register)("3lhZr",function(o,n){Object.defineProperty(o.exports,"__esModule",{value:!0,configurable:!0}),Object.defineProperty(o.exports,"default",{get:function(){return i},set:void 0,enumerable:!0,configurable:!0});var r=e("ih19M"),i=()=>(0,r.jsx)("h1",{children:"This is HungerStrikes Grocery store. It has a lot of components..!!!"})});
+//# sourceMappingURL=Grocery.e70d8e35.js.map
