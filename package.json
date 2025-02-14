@@ -1,11 +1,15 @@
 {
+  "homepage": "https://shivam2575.github.io/HungerStrikes/",
   "name": "hunger-strikes",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "npx parcel index.html",
-    "build": "npx parcel build index.html"
+    "build": "npx parcel build index.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "parcel": "^2.13.3",
     "process": "^0.11.10"
   },
