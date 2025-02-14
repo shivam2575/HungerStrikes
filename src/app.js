@@ -34,15 +34,15 @@ const AppLayout = () => {
 
 const appRoutes = createBrowserRouter([
   {
-    path: "/",
+    path: "/HungerStrikes",
     element: <AppLayout />,
     children: [
       {
-        path: "/",
+        index: true, // This makes it the default route inside "/HungerStrikes"
         element: <Body />,
       },
       {
-        path: "/about",
+        path: "about", // Remove leading `/`
         element: (
           <Suspense fallback={<Shimmer />}>
             <About />
@@ -50,11 +50,11 @@ const appRoutes = createBrowserRouter([
         ),
       },
       {
-        path: "/contact",
+        path: "contact",
         element: <Contact />,
       },
       {
-        path: "/grocery",
+        path: "grocery",
         element: (
           <Suspense fallback={<Shimmer />}>
             <Grocery />
@@ -62,11 +62,11 @@ const appRoutes = createBrowserRouter([
         ),
       },
       {
-        path: "/restaurants/:resId",
+        path: "restaurants/:resId",
         element: <RestaurantMenu />,
       },
       {
-        path: "/login",
+        path: "login",
         element: <Login />,
       },
     ],
