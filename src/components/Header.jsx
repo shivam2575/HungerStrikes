@@ -20,16 +20,16 @@ const Header = ({}) => {
             Online status: {onlineStatus ? "🟢" : "🔴"}
           </li>
           <li className="mx-4 p-2 hover:bg-gray-200 rounded-md">
-            <Link to={"/HungerStrikes/"}>Home</Link>
+            <Link to={"/"}>Home</Link>
           </li>
           <li className="mx-4 p-2 hover:bg-gray-200 rounded-md">
-            <Link to={"/HungerStrikes/about"}>About Us</Link>
+            <Link to={"about"}>About Us</Link>
           </li>
           <li className="mx-4 p-2 hover:bg-gray-200 rounded-md">
-            <Link to={"/HungerStrikes/contact"}>Contact Us</Link>
+            <Link to={"contact"}>Contact Us</Link>
           </li>
           <li className="mx-4 p-2 hover:bg-gray-200 rounded-md">
-            <Link to={"/HungerStrikes/grocery"}>Grocery</Link>
+            <Link to={"grocery"}>Grocery</Link>
           </li>
           <li className="mx-4 p-2 hover:bg-gray-200 rounded-md cursor-pointer">
             🛒

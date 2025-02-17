@@ -74,7 +74,7 @@ const appRoutes = createBrowserRouter(
       errorElement: <Error />,
     },
   ],
-  { basename: "/HungerStrikes" } // ✅ Set the base path here
+  { basename: "/HungerStrikes" }
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

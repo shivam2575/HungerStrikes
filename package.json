@@ -3,7 +3,7 @@
   "name": "hunger-strikes",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "start": "npx parcel index.html",
+    "start": "npx parcel index.html --public-url /HungerStrikes",
     "build": "npx parcel build index.html --public-url /HungerStrikes/",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
