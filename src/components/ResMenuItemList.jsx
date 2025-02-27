@@ -1,7 +1,9 @@
+import { useDispatch } from "react-redux";
+import { addItem, removeItem } from "../utils/cartSlice";
 import { IMAGE_API } from "../utils/constants";
 
 const ResMenuItemList = ({ data }) => {
-  console.log(data);
+  const dispatch = useDispatch();
   return (
     <div>
       {data.map((item) => (
@@ -23,6 +25,26 @@ const ResMenuItemList = ({ data }) => {
               alt="restaurant menu item"
               src={IMAGE_API + item.card.info.imageId}
             />
+            <div className="flex justify-evenly align-center">
+              <button
+                type="submit"
+                className="border bg-black text-white m-2 p-2 rounded-lg cursor-pointer"
+                onClick={() => {
+                  dispatch(addItem(item));
+                }}
+              >
+                +
+              </button>
+              <button
+                type="submit"
+                className="border bg-black text-white m-2 p-2 rounded-lg cursor-pointer"
+                onClick={() => {
+                  dispatch(removeItem(item));
+                }}
+              >
+                -
+              </button>
+            </div>
           </div>
         </div>
       ))}
