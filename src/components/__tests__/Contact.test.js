@@ -1,3 +1,4 @@
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Contact from "../Contact";
@@ -27,6 +28,6 @@ describe("render contact component on screen", () => {
     const inputs = screen.getAllByRole("textbox");
 
     //Assertion
-    expect(inputs).toBeInTheDocument();
+    expect(inputs[0]).toBeInTheDocument();
   });
 });
