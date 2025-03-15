@@ -49,14 +49,16 @@ test("should render header component with logout button", () => {
   expect(logoutBtn).toBeInTheDocument();
 });
 
-// test("should render header component", () => {
-//   render(
-//     <BrowserRouter>
-//       <Provider store={appStore}>
-//         <Usercontext.Provider value={{ username: userName, setUserName }}>
-//           <Header />
-//         </Usercontext.Provider>
-//       </Provider>
-//     </BrowserRouter>
-//   );
-// });
+test("should render header component", () => {
+  render(
+    <BrowserRouter>
+      <Provider store={appStore}>
+        <Header />
+      </Provider>
+    </BrowserRouter>
+  );
+
+  const groceryElement = screen.getByText("Grocery");
+
+  expect(groceryElement).toBeInTheDocument();
+});
